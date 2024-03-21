@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btn_goBackInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="뒤로가기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPositionInHome" />
+
+
+    <TextView
+        android:id="@+id/tv_inputIdInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="사용자 입력 아이디"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profileInHome" />
+
+    <TextView
+        android:id="@+id/tv_inputNameInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="사용자 이름"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_inputIdInHome" />
+
+
+    <TextView
+        android:id="@+id/tv_idInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:text="아이디:"
+        app:layout_constraintEnd_toStartOf="@+id/tv_inputIdInHome"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profileInHome" />
+
+    <TextView
+        android:id="@+id/tv_userNameInhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름:"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_inputNameInHome"
+        app:layout_constraintTop_toTopOf="@+id/tv_inputNameInHome"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_inputNameInHome"
+        />
+
+    <TextView
+        android:id="@+id/tv_ageInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나이:"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_inputAgeInHome"
+        app:layout_constraintTop_toTopOf="@+id/tv_inputAgeInHome"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_inputAgeInHome"
+        />
+
+    <TextView
+        android:id="@+id/tv_inputAgeInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="사용자 입력  나이"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_inputNameInHome" />
+
+    <TextView
+        android:id="@+id/position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="포지션:"
+        app:layout_constraintEnd_toStartOf="@+id/inputPositionInHome"
+        app:layout_constraintTop_toTopOf="@+id/inputPositionInHome"
+        app:layout_constraintBottom_toBottomOf="@+id/inputPositionInHome"/>
+
+    <TextView
+        android:id="@+id/inputPositionInHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="사용자 입력 포지션"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_inputAgeInHome" />
+
+    <ImageView
+        android:id="@+id/iv_profileInHome"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
