@@ -24,8 +24,8 @@ class HomeActivity : AppCompatActivity() {
         val userPosition = findViewById<TextView>(R.id.inputPositionInHome)
         val userName = findViewById<TextView>(R.id.tv_inputNameInHome)
         userId.text = intent.getStringExtra("Id")
-        userPosition.text = intent.getStringExtra("position")
-        userName.text = intent.getStringExtra("username")
+        userPosition.text = intent.getStringExtra("userPosition")
+        userName.text = intent.getStringExtra("userName")
 
         val btn = findViewById<Button>(R.id.btn_goBackInHome)
         btn.setOnClickListener {

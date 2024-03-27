@@ -14,6 +14,11 @@ import androidx.core.view.WindowInsetsCompat
 
 
 class SignUpActivity : AppCompatActivity() {
+    private lateinit var positionSpinner: Spinner
+    private lateinit var signInBtn: Button
+    private lateinit var signUpName: EditText
+    private lateinit var signUpId: EditText
+    private lateinit var signUpPassword: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,8 +28,12 @@ class SignUpActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        positionSpinner = findViewById(R.id.sp_position)
+        signInBtn = findViewById(R.id.btn_signup2)
+        signUpName = findViewById(R.id.et_signUpName)
+        signUpId = findViewById(R.id.et_signUpId)
+        signUpPassword = findViewById(R.id.et_signUpPassword)
         //스피너 구현
-        val positionSpinner = findViewById<Spinner>(R.id.sp_position)
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.position,
@@ -33,42 +42,43 @@ class SignUpActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         positionSpinner.adapter = adapter
 
-        //
+        logIn()
+        goBack()
+    }
+    //
 
-        val signInBtn = findViewById<Button>(R.id.btn_signup2)
-        val signUpName = findViewById<EditText>(R.id.et_signUpName)
-        val signUpEmail = findViewById<EditText>(R.id.et_signUpId)
-        val signUpPassword = findViewById<EditText>(R.id.et_signUpPassword)
-
-        //유저인포
-
-
-
+    private fun logIn() {
         signInBtn.setOnClickListener {
-            if (signUpName.text.isBlank() || signUpEmail.text.isBlank() || signUpPassword.text.isBlank()) {
+            if (signUpName.text.isBlank() || signUpId.text.isBlank() || signUpPassword.text.isBlank()) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            } else {
+                val userId: String = signUpName.text.toString()
+                val userPassword: String = signUpPassword.text.toString()
+                val userName: String = signUpName.text.toString()
+                val userPosition: String = positionSpinner.selectedItem.toString()
+
+                val intent = Intent(this, SignInActivity::class.java)
+                intent.putExtra("userpassword", userPassword)
+                intent.putExtra("userId", userId)
+                intent.putExtra("userPosition", userPosition)
+                intent.putExtra("userName", userName)
+
+                startActivity(intent)
             }
-
-            val userId: String = signUpName.text.toString()
-            val userPassword: String = signUpPassword.text.toString()
-            val intent = Intent(this, SignInActivity::class.java)
-            intent.putExtra("userpassword",userPassword)
-            intent.putExtra("userId",userId)
-
-            startActivity(intent)
         }
+    }
 
-//        signInBtn.setOnClickListener{
+    //        signInBtn.setOnClickListener{
 //            val intent2 = Intent(this,HomeActivity::class.java)
 //            val userName: String = signUpEmail.text.toString()
 //            val userPosition: String = positionSpinner.selectedItem.toString()
 //            intent2.putExtra("position",userPosition)
 //            intent2.putExtra("username",userName)
 //        }
-
-        val gobackInSignUp = findViewById<Button>(R.id.btn_signUpGoback)
-        gobackInSignUp.setOnClickListener {
+    private fun goBack() {
+        val goBackInSignUp = findViewById<Button>(R.id.btn_signUpGoback)
+        goBackInSignUp.setOnClickListener {
             finish()
         }
 

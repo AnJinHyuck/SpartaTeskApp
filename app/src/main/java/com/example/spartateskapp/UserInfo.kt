@@ -6,6 +6,7 @@ package com.example.spartateskapp
 
 abstract class UserInfo {
     val id = mutableListOf<String>()
+    val name = mutableListOf<String>()
     val age = mutableListOf<String>()
     val position= mutableListOf<String>()
 }
