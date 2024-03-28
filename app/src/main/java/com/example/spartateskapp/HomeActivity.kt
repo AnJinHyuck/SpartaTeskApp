@@ -2,6 +2,7 @@ package com.example.spartateskapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -23,9 +24,11 @@ class HomeActivity : AppCompatActivity() {
         val userId = findViewById<TextView>(R.id.tv_inputIdInHome)
         val userPosition = findViewById<TextView>(R.id.inputPositionInHome)
         val userName = findViewById<TextView>(R.id.tv_inputNameInHome)
-        userId.text = intent.getStringExtra("Id")
+
+        userId.text = intent.getStringExtra("id")
         userPosition.text = intent.getStringExtra("userPosition")
         userName.text = intent.getStringExtra("userName")
+        Log.d("check3", "${userId.text},${userPosition.text},${userName.text}")
 
         val btn = findViewById<Button>(R.id.btn_goBackInHome)
         btn.setOnClickListener {
